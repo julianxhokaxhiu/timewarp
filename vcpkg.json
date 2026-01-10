@@ -1,0 +1,33 @@
+{
+  "name": "timewarp",
+  "version": "0.1.0",
+  "builtin-baseline": "84bab45d415d22042bd0b9081aea57f362da3f35",
+  "dependencies": [
+    "detours",
+    "tomlplusplus",
+    {
+      "name": "cpuinfo",
+      "default-features": false,
+      "features": [
+        "tools"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "name": "detours",
+      "version": "4.0.1",
+      "port-version": 8
+    },
+    {
+      "name": "tomlplusplus",
+      "version": "3.4.0",
+      "port-version": 1
+    },
+    {
+      "name": "cpuinfo",
+      "version": "2025-09-06",
+      "port-version": 0
+    }
+  ]
+}

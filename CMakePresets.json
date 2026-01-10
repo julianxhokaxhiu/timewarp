@@ -1,0 +1,174 @@
+﻿{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base-x86",
+      "hidden": true,
+      "generator": "Visual Studio 17 2022",
+      "architecture": {
+        "value": "win32",
+        "strategy": "set"
+      },
+      "toolset": {
+        "value": "host=x86",
+        "strategy": "set"
+      },
+      "environment": {
+        "NUGET_CLI_LANGUAGE": "en-us",
+        "VCPKG_ROOT": "${sourceDir}/vcpkg",
+        "VCPKG_BINARY_SOURCES": "clear;nuget,github,readwrite;default,readwrite"
+      },
+      "binaryDir": "${sourceDir}/.build",
+      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "_DLL_VERSION": "devel",
+        "CMAKE_C_COMPILER": "cl",
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/.vcpkg/triplets",
+        "VCPKG_TARGET_TRIPLET": "x86-windows-static"
+      }
+    },
+    {
+      "name": "base-x64",
+      "hidden": true,
+      "generator": "Visual Studio 17 2022",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "set"
+      },
+      "environment": {
+        "NUGET_CLI_LANGUAGE": "en-us",
+        "VCPKG_ROOT": "${sourceDir}/vcpkg",
+        "VCPKG_BINARY_SOURCES": "clear;nuget,github,readwrite;default,readwrite"
+      },
+      "binaryDir": "${sourceDir}/.build",
+      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "_DLL_VERSION": "devel",
+        "CMAKE_C_COMPILER": "cl",
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/.vcpkg/triplets",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-static"
+      }
+    },
+    {
+      "name": "Release-x86",
+      "inherits": "base-x86",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "RelWithDebInfo-x86",
+      "inherits": "base-x86",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "Debug-x86",
+      "inherits": "base-x86",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "MinSizeRel-x86",
+      "inherits": "base-x86",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      }
+    },
+    {
+      "name": "Release-x64",
+      "inherits": "base-x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "RelWithDebInfo-x64",
+      "inherits": "base-x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "Debug-x64",
+      "inherits": "base-x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "MinSizeRel-x64",
+      "inherits": "base-x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Release-x86",
+      "displayName": "x86 Release",
+      "configurePreset": "Release-x86",
+      "configuration": "Release"
+    },
+    {
+      "name": "RelWithDebInfo-x86",
+      "displayName": "x86 RelWithDebInfo",
+      "configurePreset": "RelWithDebInfo-x86",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "Debug-x86",
+      "displayName": "x86 Debug",
+      "configurePreset": "Debug-x86",
+      "configuration": "Debug"
+    },
+    {
+      "name": "MinSizeRel-x86",
+      "displayName": "x86 MinSizeRel",
+      "configurePreset": "MinSizeRel-x86",
+      "configuration": "MinSizeRel"
+    },
+    {
+      "name": "Release-x64",
+      "displayName": "x64 Release",
+      "configurePreset": "Release-x64",
+      "configuration": "Release"
+    },
+    {
+      "name": "RelWithDebInfo-x64",
+      "displayName": "x64 RelWithDebInfo",
+      "configurePreset": "RelWithDebInfo-x64",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "Debug-x64",
+      "displayName": "x64 Debug",
+      "configurePreset": "Debug-x64",
+      "configuration": "Debug"
+    },
+    {
+      "name": "MinSizeRel-x64",
+      "displayName": "x64 MinSizeRel",
+      "configurePreset": "MinSizeRel-x64",
+      "configuration": "MinSizeRel"
+    }
+  ],
+  "vendor": {
+    "microsoft.com/VisualStudioSettings/CMake/1.0": {
+      "hostOS": "Windows",
+      "intelliSenseMode": "windows-msvc-x64"
+    }
+  }
+}

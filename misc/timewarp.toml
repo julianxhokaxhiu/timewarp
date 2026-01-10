@@ -1,0 +1,12 @@
+# timewarp config file
+
+##########
+# OPTIONS
+##########
+
+# Enable fake time
+enabled = true
+
+# Custom start time ( ISO 8601 - YYYY-MM-DDTHH:MM:SS )
+# PLEASE NOTE: The timer will then progress naturally once the process starts, but it will begin at this given time below.
+custom_start_time = "2025-12-25T12:30:00"
